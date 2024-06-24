@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html><head>
+    <style>
+        /* CSS KOD */
+        .balls{
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+</head>
+    <body>
+
+    <main>
+        <div class="balls" onclick="destroy()"></div>
+        <div class="balls"></div>
+        <div class="balls"></div>
+        <div class="balls"></div>
+        <div class="balls"></div>
+        <div class="balls"></div>
+        <div class="balls"></div>
+        <div class="balls"></div>
+        <div class="balls"></div>
+        <div class="balls"></div>
+        <div class="balls"></div>
+        <div class="balls"></div>
+    </main>
+
+
+
+
+
+
+        <script>
+            prevTime = Date.now();
+            /* JAVASCRIPT KOD */
+            const balls = document.querySelectorAll(".balls");
+            document.querySelector(".balls").style.backgroundColor = "blue" ;
+            // querrySelectorAll.balls[i].style.weight indexleme yapar instead of querrySelector.style.weight ilk elementi sçr
+
+            for(let i = 0; i<12 ; i++){
+
+
+            let ballnum;
+
+            y = Math.floor(Math.random()*3);
+            if(y==1){
+                ballnum = "40px"; 
+            }
+            else if(y==2){
+                ballnum = "80px";
+            }
+            else{
+                ballnum = "120px"; 
+            }
+            balls[i].style.width = ballnum;
+            balls[i].style.height = ballnum;
+            z = Math.floor(Math.random()*100);
+            balls[i].style.left = z*10 + "px"
+            
+            c = Math.floor(Math.random()*60);
+            balls[i].style.top = c*10 + "px"
+        
+        
+        }
+        
+        function destroy(){
+            document.querySelector(".balls").remove();
+            destTime = Date.now();
+            timesss = destTime - prevTime;
+            console.log(destTime - prevTime);
+            if(timesss > 800){
+                console.log("yaşlı bunak")
+            }else{
+                console.log("senden hızlısı mezarda")
+            }
+        }
+        
+
+            
+        </script>
+    </body>
+</html>
